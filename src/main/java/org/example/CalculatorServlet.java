@@ -17,10 +17,12 @@ import java.io.PrintWriter;
 @WebServlet("/calculate")
 public class CalculatorServlet implements Servlet {
 	private static final Logger log = LoggerFactory.getLogger(CalculatorServlet.class);
+	private ServletConfig servletConfig;
 	
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		log.info("init");
+		this.servletConfig = servletConfig;
 	}
 	
 	@Override
@@ -39,12 +41,12 @@ public class CalculatorServlet implements Servlet {
 	
 	@Override
 	public void destroy() {
-	
+		// resource release
 	}
 	
 	@Override
 	public ServletConfig getServletConfig() {
-		return null;
+		return this.servletConfig;
 	}
 	
 	@Override
