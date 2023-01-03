@@ -1,3 +1,7 @@
 #GET http://localhost:8080
 
-GET http://localhost:8080/calculate?operand1=10&operator=*&operand2=55
+#GET http://localhost:8080/calculate?operand1=10&operator=*&operand2=55
+
+// + 를 사용하려면 퍼센트 인코딩을 해야한다
+// + -> %2b
+GET http://localhost:8080/calculate?operand1=10&operator=%2b&operand2=55
